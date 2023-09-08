@@ -5,7 +5,7 @@ import Login from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import CreateNew from './components/new_file/CreateNew';
 import UploadFile from './components/form/UploadFile';
-
+import './css/style.css'
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import logo from './../assets/image/logo.png'
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -35,7 +36,7 @@ function Login() {
       <div className="h-[100vh] flex items-center justify-center bg-gray-100">
         <div className="bg-white shadow-lg rounded-lg w-[554px] md:w-[360px]">
           <div className="w-full h-auto p-4 rounded-lg background-top text-white text-center">
-            <img src="image/logo.png" className="h-24 mx-auto" alt="" />
+            <img src={logo} className="h-24 mx-auto" alt="" />
             <h1 className="text-xl font-bold Montserrat">
               Welcome to Sonali<br />Life Insurance
             </h1>

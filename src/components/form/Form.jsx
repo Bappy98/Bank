@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import icon from '../../assets/image/icon/arrow-left.png'
 
 function Form() {
     return (
@@ -8,7 +8,7 @@ function Form() {
             <div className="bg-white mt-2 w-full px-3">
                 <div className="flex justify-between xs:gap-3">
                     <ul className="flex gap-3 text-lg text-gray-500">
-                        <li><img src="image/icon/arrow-left.png" alt="" /></li>
+                        <li><img src={icon} alt="" /></li>
                         <li><h1>Create New File</h1></li>
                     </ul>
                     <ul className="flex mr-8 text-gray-700 w-[273px]">

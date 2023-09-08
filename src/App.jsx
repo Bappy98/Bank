@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import CreateNew from './components/new_file/CreateNew';
+import UploadFile from './components/form/UploadFile';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Use PrivateRoute and nested Dashboard route */}
+          <Route path="/dashboard" element={<PrivateRoute />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+          <Route path="/CreateNewFile" element={<PrivateRoute />}>
+            <Route index element={<CreateNew />} />
+          </Route>
+          <Route path="/UploadFile" element={<PrivateRoute />}>
+            <Route index element={<UploadFile />} />
+          </Route>
+
+          {/* Regular Route for Login */}
+          <Route path="/" element={<Login />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
